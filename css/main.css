@@ -2,17 +2,17 @@
 /* This is the main stylesheet that imports all partials */
 
 /* 1. Variables and Base */
-@import url('_variables.css');
-@import url('_reset.css');
-@import url('_typography.css');
+@import url('variables.css');
+@import url('reset.css');
+@import url('typography.css');
 
 /* 2. Components */
-@import url('_buttons.css');
-@import url('_header.css');
-@import url('_hero.css');
-@import url('_features.css');
-@import url('_download.css');
-@import url('_sections.css');
+@import url('buttons.css');
+@import url('header.css');
+@import url('hero.css');
+@import url('features.css');
+@import url('download.css');
+@import url('sections.css');
 @import url('footer.css');
 
 /* 3. Utilities (always last to ensure proper specificity) */
