@@ -1,0 +1,166 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const nav = document.querySelector('.nav');
+    
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-times');
+            this.querySelector('i').classList.toggle('fa-bars');
+        });
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Close mobile menu if open
+                if (nav && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    const menuIcon = mobileMenuButton.querySelector('i');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+                
+                // Scroll to the target element
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100, // Adjust for fixed header
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Add animation class to features on scroll
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.feature-card, .step, .tech-card');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementPosition < windowHeight - 100) {
+                element.classList.add('animate');
+            }
+        });
+    };
+
+    // Initial check for elements in viewport
+    animateOnScroll();
+    
+    // Check for elements in viewport on scroll
+    window.addEventListener('scroll', animateOnScroll);
+
+    // Add animation delay to feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.1}s`;
+    });
+
+    // Add animation delay to steps
+    const steps = document.querySelectorAll('.step');
+    steps.forEach((step, index) => {
+        step.style.transitionDelay = `${index * 0.15}s`;
+    });
+
+    // Form submission handling (example for future implementation)
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add form submission logic here
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    }
+
+    // Add a simple scroll-to-top button
+    const scrollToTopButton = document.createElement('button');
+    scrollToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    scrollToTopButton.className = 'scroll-to-top';
+    document.body.appendChild(scrollToTopButton);
+
+    // Show/hide scroll-to-top button
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopButton.classList.add('show');
+        } else {
+            scrollToTopButton.classList.remove('show');
+        }
+    });
+
+    // Scroll to top when button is clicked
+    scrollToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Add some subtle animations
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .feature-card, .step, .tech-card {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .feature-card.animate, .step.animate, .tech-card.animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .scroll-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .scroll-to-top:hover {
+        background-color: var(--text);
+        transform: translateY(-3px);
+    }
+`;
+
+document.head.appendChild(style);

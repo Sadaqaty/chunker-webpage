@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chunker - CSV File Splitter by Fixare Studio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">📊</div>
+                    <h1>Chunker</h1>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About Fixare</a></li>
+                        <li><a href="https://github.com/SecureNet-Dynamics/CSV-Splitter" target="_blank">GitHub</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Chunker - CSV File Splitter</h1>
+                <p class="subheadline">A beautiful, minimal GUI application to split large CSV files into smaller chunks
+                </p>
+                <p class="company">Crafted by <strong>Fixare Studio</strong> - Experts in Rapid Digital Transformation
+                </p>
+                <div class="cta-buttons">
+                    <a href="#download" class="btn btn-primary">Download Now</a>
+                    <a href="#about" class="btn btn-secondary">Learn About Fixare</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/splitter.png" alt="Chunker Application Interface" class="screenshot">
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mouse-pointer"></i></div>
+                    <h3>Simple & Intuitive UI</h3>
+                    <p>User-friendly interface that makes file splitting a breeze for everyone.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
+                    <h3>Flexible Chunking</h3>
+                    <p>Split by number of rows or files with customizable settings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-heading"></i></div>
+                    <h3>Header Preservation</h3>
+                    <p>Automatically includes headers in all output files for better readability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Progress Visualization</h3>
+                    <p>Real-time progress tracking with visual feedback.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-desktop"></i></div>
+                    <h3>Cross-Platform</h3>
+                    <p>Works on Windows, macOS, and Linux operating systems.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-box"></i></div>
+                    <h3>Stand-alone Executable</h3>
+                    <p>No installation required - just download and run.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download">
+        <div class="container">
+            <h2>Download Chunker</h2>
+            <div class="download-options">
+                <div class="download-option">
+                    <h3><i class="fab fa-python"></i> Source Code</h3>
+                    <p>For Python developers who want to run from source:</p>
+                    <pre><code>pip install tkinter
+python splitter-v1.py</code></pre>
+                    <a href="https://github.com/SecureNet-Dynamics/CSV-Splitter" class="btn btn-secondary"
+                        target="_blank">View on GitHub</a>
+                </div>
+                <div class="download-option">
+                    <h3><i class="fas fa-download"></i> Stand-alone Executables</h3>
+                    <p>"Ready-to-run versions for all major platforms Except macOS :)"</p>
+                    <div class="os-buttons">
+                        <a href="https://github.com/SecureNet-Dynamics/CSV-Splitter/releases/download/v1.0.0/Chunker.exe"
+                            class="os-btn windows"><i class="fab fa-windows"></i> Windows</a>
+                        <a href="https://github.com/SecureNet-Dynamics/CSV-Splitter" class="os-btn macos"><i
+                                class="fab fa-apple"></i> macOS</a>
+                        <a href="https://github.com/SecureNet-Dynamics/CSV-Splitter/releases/download/v1.0.0/Chunker-linux"
+                            class="os-btn linux"><i class="fab fa-linux"></i> Linux</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="usage">
+        <div class="container">
+            <h2>How to Use Chunker</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Browse for CSV file</h3>
+                    <p>Click the 'Browse' button to select your large CSV file.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Adjust settings</h3>
+                    <p>Choose how you want to split your file (by rows or number of files).</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Split CSV</h3>
+                    <p>Click 'Split' and watch the progress bar as your files are processed.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Find split files</h3>
+                    <p>Access your split files in the output directory you specified.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Fixare -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Built by Fixare Studio</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At Fixare Studio, we specialize in transforming complex challenges into elegant, efficient
+                        solutions. Our team of expert engineers is dedicated to building tools that make data processing
+                        faster, easier, and more reliable.</p>
+                    <div class="values">
+                        <div class="value-badge">
+                            <i class="fas fa-medal"></i>
+                            <span>Quality Without Compromise</span>
+                        </div>
+                        <div class="value-badge">
+                            <i class="fas fa-bolt"></i>
+                            <span>Speed With Precision</span>
+                        </div>
+                        <div class="value-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Security First</span>
+                        </div>
+                    </div>
+                    <a href="https://fixare.studio" class="btn btn-secondary" target="_blank">Visit Fixare Studio</a>
+                </div>
+                <div class="about-image">
+                    <div class="ascii-art">
+                        <pre>
+_____ _                         
+|  ____(_)         /\             
+| |__   ___  __   /  \   _ __ ___ 
+|  __| | \ \/ /  / /\ \ | '__/ _ \
+| |    | |>  <  / ____ \| | |  __/
+|_|    |_/_/\_\/_/    \_\_|  \___|
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="technical">
+        <div class="container">
+            <h2>Technical Information</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>Python 3.8+ (for source version)</li>
+                        <li>2GB RAM minimum (4GB recommended)</li>
+                        <li>100MB free disk space</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>Building Executables</h3>
+                    <p>For developers who want to build their own executables:</p>
+                    <pre><code>pip install pyinstaller
+pyinstaller --onefile --windowed main.py</code></pre>
+                </div>
+                <div class="tech-card">
+                    <h3>Contributing</h3>
+                    <p>We welcome contributions! Please read our <a href="#" target="_blank">contribution guidelines</a>
+                        before submitting pull requests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="logo-icon">📊</div>
+                        <h2>Chunker</h2>
+                    </div>
+                    <p>Transform what takes months into days, and what takes days into 24 hours.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#screenshots">Screenshots</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/SecureNet-Dynamics/CSV-Splitter" target="_blank"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://fixare.studio" target="_blank"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fixare Studio. All rights reserved.</p>
+                <p>Engineered with corporate-grade practices | Secure by design</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
