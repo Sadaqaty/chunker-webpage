@@ -16,7 +16,7 @@
 @import url('footer.css');
 
 /* 3. Utilities (always last to ensure proper specificity) */
-@import url('_utilities.css');
+@import url('utilities.css');
 
 /* Additional global styles can go here */
 body {
