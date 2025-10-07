@@ -2,21 +2,21 @@
 /* This is the main stylesheet that imports all partials */
 
 /* 1. Variables and Base */
-@import '_variables.css';
-@import '_reset.css';
-@import '_typography.css';
+@import './_variables.css';
+@import './_reset.css';
+@import './_typography.css';
 
 /* 2. Components */
-@import '_buttons.css';
-@import '_header.css';
-@import '_hero.css';
-@import '_features.css';
-@import '_download.css';
-@import '_sections.css';
-@import 'footer.css';
+@import './_buttons.css';
+@import './_header.css';
+@import './_hero.css';
+@import './_features.css';
+@import './_download.css';
+@import './_sections.css';
+@import './footer.css';
 
 /* 3. Utilities (always last to ensure proper specificity) */
-@import '_utilities.css';
+@import './_utilities.css';
 
 /* Additional global styles can go here */
 body {
