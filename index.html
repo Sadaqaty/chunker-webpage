@@ -14,21 +14,26 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">📊</div>
-                    <h1>Chunker</h1>
-                </div>
+                <a href="https://fixare.studio" class="logo">
+                    <img src="images/fixare.png" alt="Chunker Logo" class="logo-image">
+                </a>
                 <nav class="nav">
+                    <button class="nav-close-btn" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
                     <ul>
-                        <li><a href="#download">Download</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#about">About Fixare</a></li>
-                        <li><a href="https://github.com/SecureNet-Dynamics/CSV-Splitter" target="_blank">GitHub</a></li>
+                        <li><a href="#download"><i class="fas fa-download"></i> Download</a></li>
+                        <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> About Fixare</a></li>
+                        <li><a href="https://github.com/SecureNet-Dynamics/CSV-Splitter" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> GitHub
+                            </a></li>
                     </ul>
                 </nav>
-                <button class="mobile-menu-button">
+                <button class="mobile-menu-button" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
+                <div class="mobile-menu-overlay"></div>
             </div>
         </div>
     </header>
@@ -172,16 +177,7 @@ python splitter-v1.py</code></pre>
                     <a href="https://fixare.studio" class="btn btn-secondary" target="_blank">Visit Fixare Studio</a>
                 </div>
                 <div class="about-image">
-                    <div class="ascii-art">
-                        <pre>
-_____ _                         
-|  ____(_)         /\             
-| |__   ___  __   /  \   _ __ ___ 
-|  __| | \ \/ /  / /\ \ | '__/ _ \
-| |    | |>  <  / ____ \| | |  __/
-|_|    |_/_/\_\/_/    \_\_|  \___|
-                        </pre>
-                    </div>
+                    <img src="images/fixare.png" alt=" Fixare Studio Logo">
                 </div>
             </div>
         </div>
@@ -203,7 +199,8 @@ _____ _
                     <h3>Building Executables</h3>
                     <p>For developers who want to build their own executables:</p>
                     <pre><code>pip install pyinstaller
-pyinstaller --onefile --windowed main.py</code></pre>
+python -m PyInstaller --onefile --windowed --icon=assets/icon.ico --name="Chunker" --version-file=version.txt splitter-v1.py
+                    </code></pre>
                 </div>
                 <div class="tech-card">
                     <h3>Contributing</h3>
@@ -218,10 +215,9 @@ pyinstaller --onefile --windowed main.py</code></pre>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <div class="logo">
-                        <div class="logo-icon">📊</div>
-                        <h2>Chunker</h2>
-                    </div>
+                    <a href="#" class="logo">
+                        <img src="images/fixare.png" alt="Chunker Logo" class="logo-image">
+                    </a>
                     <p>Transform what takes months into days, and what takes days into 24 hours.</p>
                 </div>
                 <div class="footer-links">

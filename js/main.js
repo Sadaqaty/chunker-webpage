@@ -1,13 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
+    // Mobile menu elements
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
     const nav = document.querySelector('.nav');
+    const navCloseBtn = document.querySelector('.nav-close-btn');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const html = document.documentElement;
     
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+        nav.classList.toggle('active');
+        mobileMenuOverlay.classList.toggle('active');
+        html.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        
+        // Toggle menu icon
+        const menuIcon = mobileMenuButton.querySelector('i');
+        menuIcon.classList.toggle('fa-times');
+        menuIcon.classList.toggle('fa-bars');
+    }
+    
+    // Event listeners
     if (mobileMenuButton) {
-        mobileMenuButton.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            this.querySelector('i').classList.toggle('fa-times');
-            this.querySelector('i').classList.toggle('fa-bars');
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+    }
+    
+    if (navCloseBtn) {
+        navCloseBtn.addEventListener('click', toggleMobileMenu);
+    }
+    
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', function() {
+            if (nav.classList.contains('active')) {
+                toggleMobileMenu();
+            }
         });
     }
 
@@ -23,10 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (targetElement) {
                 // Close mobile menu if open
                 if (nav && nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    const menuIcon = mobileMenuButton.querySelector('i');
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
+                    toggleMobileMenu();
                 }
                 
                 // Scroll to the target element
