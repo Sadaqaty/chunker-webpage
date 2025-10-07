@@ -1,21 +1,57 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu elements
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const nav = document.querySelector('.nav');
-    const navCloseBtn = document.querySelector('.nav-close-btn');
-    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
     const html = document.documentElement;
     
     // Toggle mobile menu
     function toggleMobileMenu() {
-        nav.classList.toggle('active');
-        mobileMenuOverlay.classList.toggle('active');
-        html.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        mobileMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        html.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         
         // Toggle menu icon
         const menuIcon = mobileMenuButton.querySelector('i');
-        menuIcon.classList.toggle('fa-times');
-        menuIcon.classList.toggle('fa-bars');
+        if (mobileMenu.classList.contains('active')) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        } else {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        }
+    }
+    
+    // Close menu when clicking on a nav link
+    function closeMobileMenu() {
+        if (mobileMenu.classList.contains('active')) {
+            toggleMobileMenu();
+        }
+    }
+    
+    // Smooth scroll to anchor links
+    function smoothScrollToAnchor(event) {
+        // Only handle links that point to anchors on the same page
+        if (this.getAttribute('href').startsWith('#')) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Close mobile menu if open
+                closeMobileMenu();
+                
+                // Smooth scroll to target
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // Adjust for fixed header
+                    behavior: 'smooth'
+                });
+                
+                // Update URL without page jump
+                history.pushState(null, '', targetId);
+            }
+        }
+        // External links will work as normal
     }
     
     // Event listeners
@@ -23,17 +59,24 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuButton.addEventListener('click', toggleMobileMenu);
     }
     
-    if (navCloseBtn) {
-        navCloseBtn.addEventListener('click', toggleMobileMenu);
+    if (overlay) {
+        overlay.addEventListener('click', toggleMobileMenu);
     }
     
-    if (mobileMenuOverlay) {
-        mobileMenuOverlay.addEventListener('click', function() {
-            if (nav.classList.contains('active')) {
-                toggleMobileMenu();
-            }
-        });
-    }
+    // Add click event to all anchor links for smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Skip if it's a button or has a special class that should behave normally
+        if (!anchor.classList.contains('no-smooth-scroll')) {
+            anchor.addEventListener('click', smoothScrollToAnchor);
+        }
+    });
+    
+    // Close mobile menu when clicking on any nav link (both mobile and desktop)
+    document.querySelectorAll('.nav-link, .footer-links a').forEach(link => {
+        if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+            link.addEventListener('click', closeMobileMenu);
+        }
+    });
     
     // Mobile footer accordion
     function initFooterAccordion() {

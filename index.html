@@ -16,28 +16,47 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="header-content">
-                <a href="https://fixare.studio" class="logo">
-                    <img src="images/fixare.png" alt="Chunker Logo" class="logo-image">
-                </a>
-                <nav class="nav">
-                    <button class="nav-close-btn" aria-label="Close menu">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <ul>
-                        <li><a href="#download"><i class="fas fa-download"></i> Download</a></li>
-                        <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
-                        <li><a href="#about"><i class="fas fa-info-circle"></i> About Fixare</a></li>
-                        <li><a href="https://github.com/SecureNet-Dynamics/CSV-Splitter" target="_blank" rel="noopener">
-                                <i class="fab fa-github"></i> GitHub
-                            </a></li>
-                    </ul>
-                </nav>
-                <button class="mobile-menu-button" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="mobile-menu-overlay"></div>
+            <a href="https://fixare.studio" class="logo">
+                <img src="images/fixare.png" alt="Chunker Logo" class="logo-image">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-menu">
+                    <li><a href="#download" class="nav-link"><i class="fas fa-download"></i> Download</a></li>
+                    <li><a href="#features" class="nav-link"><i class="fas fa-star"></i> Features</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="https://github.com/SecureNet-Dynamics/CSV-Splitter" class="nav-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> GitHub
+                    </a></li>
+                    <li><a href="#download" class="nav-link download-btn">
+                        <i class="fas fa-download"></i> Download Now
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <ul class="nav-menu">
+                    <li><a href="#download" class="nav-link"><i class="fas fa-download"></i> Download</a></li>
+                    <li><a href="#features" class="nav-link"><i class="fas fa-star"></i> Features</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="https://github.com/SecureNet-Dynamics/CSV-Splitter" class="nav-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> GitHub
+                    </a></li>
+                    <li><a href="#download" class="nav-link download-btn">
+                        <i class="fas fa-download"></i> Download Now
+                    </a></li>
+                </ul>
             </div>
+            
+            <!-- Overlay for mobile menu -->
+            <div class="overlay"></div>
         </div>
     </header>
 
