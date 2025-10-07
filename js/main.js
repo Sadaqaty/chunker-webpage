@@ -34,6 +34,43 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Mobile footer accordion
+    function initFooterAccordion() {
+        const footerLinks = document.querySelectorAll('.footer-links');
+        
+        if (window.innerWidth <= 768) {
+            footerLinks.forEach(linkSection => {
+                const heading = linkSection.querySelector('h4');
+                const content = linkSection.querySelector('ul');
+                
+                // Close all accordions by default on mobile
+                content.style.maxHeight = '0';
+                
+                heading.addEventListener('click', () => {
+                    // Toggle the active class
+                    linkSection.classList.toggle('active');
+                    
+                    // Toggle the max-height of the content
+                    if (linkSection.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    } else {
+                        content.style.maxHeight = '0';
+                    }
+                });
+            });
+        } else {
+            // Reset for desktop
+            footerLinks.forEach(linkSection => {
+                const content = linkSection.querySelector('ul');
+                content.style.maxHeight = '';
+            });
+        }
+    }
+    
+    // Initialize footer accordion on load and window resize
+    window.addEventListener('load', initFooterAccordion);
+    window.addEventListener('resize', initFooterAccordion);
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
